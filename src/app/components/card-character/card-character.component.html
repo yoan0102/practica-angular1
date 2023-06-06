@@ -1,0 +1,18 @@
+<article class="card mt-2" style="width: 18rem">
+  <img src="{{ character.image }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <span
+      class="float-end p-1"
+      [ngClass]="{
+        'bg-primary text-white': character.status.toLowerCase().includes('alive'),
+        'bg-danger text-white': character.status.toLowerCase().includes('dead'),
+      }"
+      >{{ character.status }}</span
+    >
+    <h5 class="card-title">{{ character.name }}</h5>
+    <p class="card-text">
+      <strong>Species</strong> | <span>{{ character.species }}</span>
+    </p>
+    <a [href]="character.url" class="btn btn-primary m-auto">Go somewhere</a>
+  </div>
+</article>
